@@ -28,6 +28,11 @@ In 0.6.x, each tablet has their own instance of interpolators & setting
 
 **Output modes** are the most important part of the pipeline. They receive reports from the parser, send them to each elements of the pipeline, then pass the result to the pointer, which usually is responsible for moving the cursor or other trigerring functionalities depending on the Operating System's API. \
  \
+OpenTabletDriver has two types of output modes: **Absolute** and **Relative**.
+
+The **Absolute output mode** will move the cursor depending on the position of the pen on the tablet, going out of range and back will result in the cursor jumping. \
+As for the **Relative output mode**, it will move the cursor relative to the last known position like a mouse.
+
 It is the first type of plugin to be initialized.
 
 ```{note}
