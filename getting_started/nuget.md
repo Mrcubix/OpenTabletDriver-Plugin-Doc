@@ -11,7 +11,7 @@ This package also include [`OpenTabletDriver.Plugin`](https://github.com/OpenTab
 
 ```{warning}
 The package version is linked to the OpenTabletDriver version it was created for. \
-Plugins may work across minor versions, but may break if major changes are made to the plugin library.
+Plugins usually work across minor versions but occasionally there may be breaking changes to the plugin library.
 ```
 
 If these packages doesn't fit you needs, you may be interested into using git submodules instead to include other parts of the driver.
