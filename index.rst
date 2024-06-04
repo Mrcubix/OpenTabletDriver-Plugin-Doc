@@ -25,3 +25,15 @@ Welcome to OpenTabletDriver Plugin Documentation's documentation!
    code_and_explain/output_mode
    code_and_explain/bindings
    code_and_explain/tools
+   code_and_explain/dependencies
+   code_and_explain/notifications
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Quirks & Issues
+
+   issues/introduction
+   issues/log_spam
+   issues/plugin_memory_leak
+   issues/plugin_race_conditions
+   issues/settings_wipe
