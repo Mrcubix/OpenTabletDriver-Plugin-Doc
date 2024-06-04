@@ -1,6 +1,6 @@
 # Output Modes
 
-As mentionned in {ref}`Plugin Types & features <output-modes>`, there exist two types of output modes in OpenTabletDriver, Absolute and Relative.
+As mentionned in [Plugin Types & features](#plugin_types), there exist two types of output modes in OpenTabletDriver, Absolute and Relative.
 
 An output mode plugin has to inherit from either of these for it to be configurable by the user in the UX. \
 Otherwise, you can also provide the means to configure it via external means.
