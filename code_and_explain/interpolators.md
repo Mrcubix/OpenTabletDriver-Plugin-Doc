@@ -17,8 +17,6 @@ public class MyInterp : Interpolator
     {
     }
 
-    public FilterStage FilterStage => FilterStage.PreTranspose;
-
     // Position is received here
     public override SyntheticTabletReport Interpolate()
     {
@@ -73,6 +71,15 @@ public class MyInterp : AsyncPositionedPipelineElement<IDeviceReport>
 :::
 ::::
 
+The `UpdateState` in called on every tablet reports, while `Interpolate` is called at the frequency defined by the user, represented by the `Frequency` property.
+
+```{admonition} Confusing changes were made in 0.6.x
+:class: warning
+Interpolator have changed heavily between 0.5.x & 0.6.x.
+The `UpdateState` method is instead called at the frequency defined by the user while the `ConsumeState` is called whenever a report is received from the tablet. \
+Keep this in mind if you make an interpolator in 0.5.x & want to make it work properly in 0.6.x.
+```
+
 You can make your interpolator configurable by the user by adding properties to your class.
 
 ```csharp
@@ -99,7 +106,7 @@ public int ExampleStringProperty { get; set; }
 public bool ExampleBooleanProperty { set; get; }
 ```
 
-```{image} img/plugin-properties.png
+```{image} img/plugin-interpolator-properties.png
 :alt: Plugin Properties
 :align: center
 ```
