@@ -10,9 +10,12 @@ Both output modes share the same Interface being `IOutputMode`, which include th
 Although The `Transpose()` method is not part of the Interface, it is present in both output modes's base class and is responsible for passing the position to each plugins in the pipeline, \
 as well as performing the transformation from tablet coordinates to screen coordinates.
 
+```{warning}
 The `Transpose()` cannot be overriden in 0.5.x and therefore you should not send your report to the base if you intend on using your own implementation.
-
+```
+```{note}
 In 0.5.x, processing and pointer interactions are done in the same method.
+```
 
 ## Absolute Output Mode
 
@@ -71,7 +74,9 @@ public class MyAbsoluteOutputMode : AbsoluteOutputMode, IPointerProvider<IAbsolu
 
 The cursor is only moved if the result of `Transpose()` is a `Vector2` and it is not outside the defined area while `Ignore input outside area` is enabled.
 
+```{note}
 The `Transpose()` present in the base class returns the transformed position.
+```
 
 See [AbsoluteOutputMode on Github](https://github.com/OpenTabletDriver/OpenTabletDriver/blob/v0.5.3.3/OpenTabletDriver.Plugin/Output/AbsoluteOutputMode.cs)
 for more details.
@@ -124,6 +129,8 @@ public class MyRelativeOutputMode : RelativeOutputMode, IPointerProvider<IRelati
 :::
 ::::
 
+```{note}
 The `Transpose()` present in the base class returns the delta between the last and the current position instead of the transformed position.
+```
 
 See [RelativeOutputMode on Github](https://github.com/OpenTabletDriver/OpenTabletDriver/blob/v0.5.3.3/OpenTabletDriver.Plugin/Output/RelativeOutputMode.cs)
