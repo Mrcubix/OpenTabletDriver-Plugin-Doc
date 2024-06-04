@@ -37,7 +37,7 @@ public class MyFilter : IPositionedPipelineElement<IDeviceReport>
 ::::
 
 In 0.5.3.3, you are able to alter positionnal reports via the `Filter` method, which is called on every report. \
-You may cancel the report by returning `Vector2.Zero`.
+You may cancel the report by returning `Vector2.Zero` or less if the user has `Ignore output outside area` is enabled.
 
 Filters can choose to be called at two different stages of the pipeline by changing the value of `Position`. \
 The possible values are : `FilterStage.PreTranspose` and `FilterStage.PostTranspose` \
