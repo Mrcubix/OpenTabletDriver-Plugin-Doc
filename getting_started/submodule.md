@@ -14,7 +14,7 @@ git -c .modules/OpenTabletDriver checkout v0.5.3.3
 
 ```{warning}
 Although i'm checking out at 0.5.3.3, you should check out at the version you intend to make the plugin for. \
-Plugins may work across minor versions but may break in a case major where major changes are made to the plugin library.
+Plugins may work across minor versions, but may break if major changes are made to the plugin library.
 ```
 
 Once that is done, to add `OpenTabletDriver.Desktop` as a project reference, for example, you can add the following to your `.csproj` file:
