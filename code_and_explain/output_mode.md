@@ -7,7 +7,7 @@ Otherwise, you can also provide the means to configure it via external means.
 
 Both output modes share the same Interface being `IOutputMode`, which include the `Read()` method. it is called after the report has been parsed.
 
-Althought The `Transpose()` method is not part of the Interface, it is present in both output modes's base class and is responsible for passing the position to each plugins in the pipeline, \
+Although The `Transpose()` method is not part of the Interface, it is present in both output modes's base class and is responsible for passing the position to each plugins in the pipeline, \
 as well as performing the transformation from tablet coordinates to screen coordinates.
 
 The `Transpose()` cannot be overriden in 0.5.x and therefore you should not send your report to the base if you intend on using your own implementation.
