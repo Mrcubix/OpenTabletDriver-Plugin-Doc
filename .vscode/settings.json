@@ -1,0 +1,9 @@
+{
+    "esbonio.sphinx.confDir": "${workspaceFolder}",
+    "triggerTaskOnSave.tasks": {
+        "build": [
+            "*.rst",
+            "*.md"
+        ]
+    }
+}
