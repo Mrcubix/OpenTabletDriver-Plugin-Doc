@@ -1,6 +1,6 @@
 # Nuget Packages
 
-OpenTabletDriver offer multiple packages on Nuget for plugin development. \
+OpenTabletDriver offer multiple packages on Nuget for plugin development.
 
 [`OpenTabletDriver.Plugin`](https://github.com/OpenTabletDriver/OpenTabletDriver.Plugin) offers libraries to create plugins for OpenTabletDriver. \
 This package is used to create filters, interpolators, output modes, bindings and tools.
