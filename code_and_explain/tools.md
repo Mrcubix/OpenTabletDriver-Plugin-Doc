@@ -12,7 +12,13 @@ public class MyBinding : ITool
 }
 ```
 
-Tools are the last type of plugin to be initialized. They are not part of the pipeline and are used to either provide an interface to some bindings or as a bridge to external applications.
+Tools are not part of the pipeline and are used to either provide an interface to some bindings or as a bridge to external applications.
+
+```{warning}
+You should run your code in a separate thread or task to avoid blocking the driver.
+```
+
+Tools are last in the chain of initialization.
 
 You can make your tool configurable by the user by adding properties to your class.
 
