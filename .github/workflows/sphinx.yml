@@ -1,0 +1,43 @@
+# github workflow for building sphinx docs
+name: Build and Deploy Sphinx Docs
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    permissions:
+      contents: write
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v3
+
+      - name: Install dependencies
+        run: |
+          pip install sphinx_rtd_theme myst-parser sphinx-copybutton sphinx-tabs
+
+      - name: Build docs
+        run: |
+          sphinx-build . _build
+
+      - name: Upload docs
+        uses: actions/upload-artifact@v2
+        with:
+          name: HTML Docs
+          path: _build/html
+
+      - name: Deploy docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _build/
+          force_orphan: true
+      
