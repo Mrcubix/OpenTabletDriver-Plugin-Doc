@@ -43,3 +43,9 @@ html_theme_options = {
     "collapse_navigation": False,
     "display_version": True,
 }
+html_context = {
+    "display_github": True,
+    "github_user": "Mrcubix",
+    "github_repo": "OpenTabletDriver-Plugin-Doc",
+    "github_version": "master/",
+}
