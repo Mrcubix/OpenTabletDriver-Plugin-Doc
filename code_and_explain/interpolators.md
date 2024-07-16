@@ -35,13 +35,11 @@ public class MyInterp : Interpolator
 [PluginName("My Name")]
 public class MyInterp : AsyncPositionedPipelineElement<IDeviceReport>
 {
-    public BezierInterp() : base()
+    public MyInterp() : base()
     {
     }
 
-    public PipelinePosition Position => PipelinePosition.PostTransform;
-
-    public event Action<IDeviceReport>? Emit;
+    public override PipelinePosition Position => PipelinePosition.PostTransform;
 
     /// <summary>
     ///   Updates the state of the <see cref="AsyncPositionedPipelineElement{T}"/> 
@@ -104,11 +102,24 @@ public string ExampleStringProperty { get; set; }
          "A property that appear as a check box.\n\n" +
          "Has a Boolean value")]
 public bool ExampleBooleanProperty { set; get; }
+
+[Property("Validated Property"),
+ DefaultPropertyValue("Two"),
+ PropertyValidated(nameof(SomeChoice))]
+public string SomeValidatedProperty { get; set; } = string.Empty;
+
+public static IEnumerable<string> SomeChoice { get; set; } = new List<string> { "One", "Two", "Three" };
 ```
 
 ```{image} img/plugin-interpolator-properties.png
 :alt: Plugin Properties
 :align: center
+```
+
+<br>
+
+```{note}
+The Enumerable used for a `PropertyValidated` must be a static field.
 ```
 
 <br>
