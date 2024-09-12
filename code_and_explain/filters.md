@@ -43,6 +43,13 @@ Filters can choose to be called at two different stages of the pipeline by chang
 The possible values are : `FilterStage.PreTranspose` and `FilterStage.PostTranspose` \
 (before or after the transformation from tablet to screen coordinates).
 
+```{admonition} Do not block non-handled input types
+:class: danger
+Plugins such as Filters should emit non-handled report types in `Consume()`.  
+Failing in doing so may result in those reports being discarded.  
+(Preventing Bindings set by the user from being invoked & other plugins from working properly)
+```
+
 You can make your filter configurable by the user by adding properties to your class.
 
 ```csharp

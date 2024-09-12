@@ -71,6 +71,13 @@ public class MyInterp : AsyncPositionedPipelineElement<IDeviceReport>
 
 The `UpdateState` in called on every tablet reports, while `Interpolate` is called at the frequency defined by the user, represented by the `Frequency` property.
 
+```{admonition} Do not block non-handled input types
+:class: danger
+Plugins such as Interpolators should emit non-handled report types in `ConsumeState()`.  
+Failing in doing so may result in those reports being discarded.  
+(Preventing Bindings set by the user from being invoked & other plugins from working properly)
+```
+
 ```{admonition} Confusing changes were made in 0.6.x
 :class: warning
 Interpolator have changed heavily between 0.5.x & 0.6.x.
