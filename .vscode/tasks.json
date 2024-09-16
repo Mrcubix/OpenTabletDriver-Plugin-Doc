@@ -6,7 +6,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "make html",
+            "command": "make dirhtml",
             // Do not show terminal on trigger
             "presentation": {
                 "reveal": "never"

@@ -25,7 +25,7 @@ jobs:
 
       - name: Build docs
         run: |
-          sphinx-build . _build
+          sphinx-build -b dirhtml . _build
 
       - name: Upload docs
         uses: actions/upload-artifact@main
