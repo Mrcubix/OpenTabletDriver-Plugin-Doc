@@ -1,0 +1,29 @@
+section.embed-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (min-width: 1040px) {
+    section.embed-container > iframe {
+        width: 720px;
+        height: 405px;
+    }
+}
+
+@media only screen and (max-width: 1039px) {
+
+    @media only screen and (min-width: 769px) {
+        section.embed-container > iframe {
+            width: 400px;
+            height: 224px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        section.embed-container > iframe {
+            width: 100%;
+            height: 56.25vw;
+        }
+    }
+}
