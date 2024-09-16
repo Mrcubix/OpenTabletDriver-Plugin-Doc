@@ -1,21 +1,6 @@
 # Filters
 
 ::::{tabs}
-:::{tab} 0.5.3.3
-```csharp
-[PluginName("My Name")]
-public class MyFilter : IFilter
-{
-    public FilterStage FilterStage => FilterStage.PreTranspose;
-
-    // Position is received here
-    public Vector2 Filter(Vector2 value)
-    {
-        return value;
-    }
-}
-```
-:::
 :::{tab} 0.6.4.0
 ```csharp
 [PluginName("My Name")]
@@ -34,13 +19,34 @@ public class MyFilter : IPositionedPipelineElement<IDeviceReport>
 }
 ```
 :::
+:::{tab} 0.5.3.3
+```csharp
+[PluginName("My Name")]
+public class MyFilter : IFilter
+{
+    public FilterStage FilterStage => FilterStage.PreTranspose;
+
+    // Position is received here
+    public Vector2 Filter(Vector2 value)
+    {
+        return value;
+    }
+}
+```
+:::
 ::::
 
-In 0.5.3.3, you are able to alter positionnal reports via the `Filter` method, which is called on every report. \
-You may cancel the report by returning `Vector2.Zero` or less if the user has `Ignore output outside area` is enabled.
+In 0.6.x, You are able to alter positionnal reports via the `Consume()` method, which is called on every report. \
+You can also choose to not emit a positionnal report to prevent it from going further in the pipeline.
+
+In 0.5.x, you are able to alter positionnal reports via the `Filter` method, which is called on every report. \
+You may discard the report by returning `Vector2.Zero` or less if the user has `Ignore output outside area` is enabled.
 
 Filters can choose to be called at two different stages of the pipeline by changing the value of `Position`. \
-The possible values are : `FilterStage.PreTranspose` and `FilterStage.PostTranspose` \
+The possible values are :
+- Before the transformation: `PipelinePosition.PreTransform` (0.6.x) / `FilterStage.PreTranspose` (0.5.x),
+- After the transformation: `PipelinePosition.PostTransform` (0.6.x) / `FilterStage.PostTranspose` (0.5.x)
+
 (before or after the transformation from tablet to screen coordinates).
 
 ```{admonition} Do not block non-handled input types (0.6.x Only)

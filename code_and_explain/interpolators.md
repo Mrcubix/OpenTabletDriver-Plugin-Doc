@@ -1,35 +1,11 @@
 # Interpolators
 
 ```{admonition} Help Wanted
-:class: error
+:class: danger
 This section is incomplete. If you have experience with OpenTabletDriver's interpolators, please consider contributing to this documentation.
 ```
 
 ::::{tabs}
-:::{tab} 0.5.3.3
-```csharp
-[PluginName("My Name")]
-public class MyInterp : Interpolator
-{
-    private SyntheticTabletReport syntheticReport;
-
-    public MyInterp(ITimer scheduler) : base(scheduler)
-    {
-    }
-
-    // Position is received here
-    public override SyntheticTabletReport Interpolate()
-    {
-        return syntheticReport;
-    }
-
-    public override void UpdateState(SyntheticTabletReport report)
-    {
-        syntheticReport = new SyntheticTabletReport(report);
-    }
-}
-```
-:::
 :::{tab} 0.6.4.0
 ```csharp
 [PluginName("My Name")]
@@ -67,22 +43,46 @@ public class MyInterp : AsyncPositionedPipelineElement<IDeviceReport>
 }
 ```
 :::
+:::{tab} 0.5.3.3
+```csharp
+[PluginName("My Name")]
+public class MyInterp : Interpolator
+{
+    private SyntheticTabletReport syntheticReport;
+
+    public MyInterp(ITimer scheduler) : base(scheduler)
+    {
+    }
+
+    // Position is received here
+    public override SyntheticTabletReport Interpolate()
+    {
+        return syntheticReport;
+    }
+
+    public override void UpdateState(SyntheticTabletReport report)
+    {
+        syntheticReport = new SyntheticTabletReport(report);
+    }
+}
+```
+:::
 ::::
 
 The `UpdateState` in called on every tablet reports, while `Interpolate` is called at the frequency defined by the user, represented by the `Frequency` property.
-
-```{admonition} Do not block non-handled input types (0.6.x Only)
-:class: danger
-Plugins such as Interpolators should emit non-handled report types in `ConsumeState()`.  
-Failing in doing so may result in those reports being discarded.  
-(Preventing Bindings set by the user from being invoked & other plugins from working properly)
-```
 
 ```{admonition} Confusing changes were made in 0.6.x
 :class: warning
 Interpolator have changed heavily between 0.5.x & 0.6.x.
 The `UpdateState` method is instead called at the frequency defined by the user while the `ConsumeState` is called whenever a report is received from the tablet. \
 Keep this in mind if you make an interpolator in 0.5.x & want to make it work properly in 0.6.x.
+```
+
+```{admonition} Do not block non-handled input types (0.6.x Only)
+:class: danger
+Plugins such as Interpolators should emit non-handled report types in `ConsumeState()`.  
+Failing in doing so may result in those reports being discarded.  
+(Preventing Bindings set by the user from being invoked & other plugins from working properly)
 ```
 
 You can make your interpolator configurable by the user by adding properties to your class.
