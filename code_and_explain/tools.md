@@ -9,6 +9,11 @@ public class MyBinding : ITool
         // do something
         return true;
     }
+
+    public void Dispose()
+    {
+        // do something
+    }
 }
 ```
 
