@@ -30,6 +30,12 @@ Welcome to OpenTabletDriver Plugin Documentation's documentation!
 
 .. toctree::
    :maxdepth: 1
+   :caption: Debugging
+
+   debugging/vscode
+
+.. toctree::
+   :maxdepth: 1
    :caption: Quirks & Issues
 
    issues/introduction
