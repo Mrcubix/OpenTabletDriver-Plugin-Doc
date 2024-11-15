@@ -11,12 +11,12 @@ public class MyBinding : IStateBinding
 
     public void Press(TabletReference tablet, IDeviceReport report)
     {
-        // do something depending on <see cref="Key"/>
+        // do something depending on <see cref="Property"/>
     }
 
     public void Release(TabletReference tablet, IDeviceReport report)
     {
-        // do something depending on <see cref="Key"/>
+        // do something depending on <see cref="Property"/>
     }
 
     /// <summary>
@@ -25,7 +25,7 @@ public class MyBinding : IStateBinding
     public static IEnumerable<string> ValidProperties => new List<string> { "Option 1", 
                                                                             "Option 2" };
 
-    public override string ToString() => $"My Binding: {Key}";
+    public override string ToString() => $"My Binding: {Property}";
 }
 ```
 :::
