@@ -81,7 +81,7 @@ public string ExampleStringProperty { get; set; }
          "Has a Boolean value")]
 public bool ExampleBooleanProperty { set; get; }
 
-
+// 0.6.x Only
 [Property("Validated Property"),
  DefaultPropertyValue("Two"),
  PropertyValidated(nameof(SomeChoice))]
