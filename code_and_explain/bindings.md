@@ -69,3 +69,9 @@ Any options in the `ValidProperties` / `ValidKeys` array will be displayed in th
 :alt: Bindings dropdown
 :align: center
 ```
+
+<br>
+
+```{note}
+In 0.6.x, You are able to declare additional properties, that will be displayed in the advanced binding editor.
+```
