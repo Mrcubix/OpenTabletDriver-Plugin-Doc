@@ -131,3 +131,11 @@ The Enumerable used for a `PropertyValidated` must be a static field.
 ```
 
 <br>
+
+```{seealso}
+You can find the 0.6.x sample code [here](https://github.com/Mrcubix/OpenTabletDriver-Plugin-Doc/blob/master/samples/0.6.x/Samples.Interpolator/MyInterpolator.cs){.external}.
+```
+
+```{seealso}
+You can find the 0.5.x sample code [here](https://github.com/Mrcubix/OpenTabletDriver-Plugin-Doc/blob/master/samples/0.5.x/Samples.Interpolator/MyInterpolator.cs){.external}.
+```

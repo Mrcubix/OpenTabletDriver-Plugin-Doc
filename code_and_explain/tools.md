@@ -71,3 +71,7 @@ The Enumerable used for a `PropertyValidated` must be a static field.
 ```
 
 <br>
+
+```{seealso}
+You can find the 0.5.x sample code [here](https://github.com/Mrcubix/OpenTabletDriver-Plugin-Doc/blob/master/samples/all/Samples.Tool/MyTool.cs){.external}.
+```

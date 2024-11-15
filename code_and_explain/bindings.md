@@ -84,9 +84,9 @@ In 0.6.x, You are able to declare additional properties, that will be displayed 
 <br>
 
 ```{seealso}
-You can find the 0.6.x sample code [here](../samples/0.6.x/Samples.Binding/MyBinding.cs).
+You can find the 0.6.x sample code [here](https://github.com/Mrcubix/OpenTabletDriver-Plugin-Doc/blob/master/samples/0.6.x/Samples.Binding/MyBinding.cs){.external}.
 ```
 
 ```{seealso}
-You can find the 0.5.x sample code [here](../samples/0.5.x/Samples.Binding/MyBinding.cs).
+You can find the 0.5.x sample code [here](https://github.com/Mrcubix/OpenTabletDriver-Plugin-Doc/blob/master/samples/0.5.x/Samples.Binding/MyBinding.cs){.external}.
 ```
