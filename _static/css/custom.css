@@ -4,6 +4,14 @@ section.embed-container {
     align-items: center;
 }
 
+.admonition.seealso > .admonition-title {
+    background-color: #43a071;
+}
+
+.admonition.seealso > .admonition-title:before {
+    content: "";
+}
+
 @media only screen and (min-width: 1040px) {
     section.embed-container > iframe {
         width: 720px;
