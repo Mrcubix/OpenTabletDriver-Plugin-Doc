@@ -80,3 +80,13 @@ In 0.6.x, You are able to declare additional properties, that will be displayed 
 :alt: Extra Properties in the advanced binding editor
 :align: center
 ```
+
+<br>
+
+```{seealso}
+You can find the 0.6.x sample code [here](../samples/0.6.x/Samples.Binding/MyBinding.cs).
+```
+
+```{seealso}
+You can find the 0.5.x sample code [here](../samples/0.5.x/Samples.Binding/MyBinding.cs).
+```
