@@ -40,7 +40,7 @@ namespace Samples.Interpolator
          ToolTip("Filter template:\n\n" +
                  "A property that appear as an input box.\n\n" +
                  "Has a string value.")]
-        public int ExampleStringProperty { get; set; }
+        public string ExampleStringProperty { get; set; }
 
         [BooleanProperty("Boolean Property", ""),
          DefaultPropertyValue(true),
