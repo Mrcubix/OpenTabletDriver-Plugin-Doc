@@ -1,0 +1,245 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bindings &mdash; OpenTabletDriver Plugin Documentation 0.5.3.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/override.css?v=ce37a600" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bfc6ee90" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=8f057e8d"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/tabs.js?v=3030b3cb"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Tools" href="../tools/" />
+    <link rel="prev" title="Output Modes" href="../output_mode/" />
+    <!-- Discord Embed -->
+    <meta property="og:title" content="OpenTabletDriver Plugin Documentation">
+    <meta property="og:description" content="A documentation on how to make your own plugin for OpenTabletDriver.">
+    <!-- How to play -->
+    <meta property="og:image" content="">
+    <meta property="theme-color" content="#82B2EA">
+    <!-- twitter -->
+    <meta name="twitter:site" content="OpenTabletDriver Plugin Documentation">
+    <meta name="twitter:title" content="Touch User Gestures Documentation">
+    <meta name="twitter:description" content="A documentation on how to make your own plugin for OpenTabletDriver.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="">
+    <meta name="theme-color" content="#82B2EA">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../" class="icon icon-home">
+            OpenTabletDriver Plugin Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/introduction/">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/plugin_types/">Plugin types &amp; features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/plugin_types/#filters">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/plugin_types/#interpolators">Interpolators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/plugin_types/#output-modes">Output Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/plugin_types/#bindings">Bindings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/plugin_types/#tools">Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/pipeline/">Pipeline</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/nuget/">Nuget Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/submodule/">Github Submodule</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code &amp; Explanation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../filters/">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interpolators/">Interpolators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output_mode/">Output Modes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../output_mode/#absolute-output-mode">Absolute Output Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../output_mode/#relative-output-mode">Relative Output Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dependencies/">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications  (0.6.x Only)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Debugging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../debugging/vscode/">Debugging with VSCode</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quirks &amp; Issues</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../issues/introduction/">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../issues/log_spam/">Log spam (0.6.x Only)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../issues/plugin_memory_leak/">Plugin Memory Leak (Fixed in 0.6.5.1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../issues/plugin_race_conditions/">Plugin Race Conditions (0.6.x Only)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../issues/settings_wipe/">Settings Wipe (0.6.x Only)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">OpenTabletDriver Plugin Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Bindings</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/Mrcubix/OpenTabletDriver-Plugin-Doc/blob/master/code_and_explain/bindings.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bindings">
+<h1>Bindings<a class="headerlink" href="#bindings" title="Link to this heading"></a></h1>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">0.6.4.0</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">0.5.3.3</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="na">[PluginName(&quot;My Binding&quot;)]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyBinding</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IStateBinding</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[Property(&quot;Property&quot;), PropertyValidated(nameof(ValidProperties))]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Property</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Press</span><span class="p">(</span><span class="n">TabletReference</span><span class="w"> </span><span class="n">tablet</span><span class="p">,</span><span class="w"> </span><span class="n">IDeviceReport</span><span class="w"> </span><span class="n">report</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// do something depending on &lt;see cref=&quot;Property&quot;/&gt;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Release</span><span class="p">(</span><span class="n">TabletReference</span><span class="w"> </span><span class="n">tablet</span><span class="p">,</span><span class="w"> </span><span class="n">IDeviceReport</span><span class="w"> </span><span class="n">report</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// do something depending on &lt;see cref=&quot;Property&quot;/&gt;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
+<span class="w">    </span><span class="c1">/// A list of valid keys for this category</span>
+<span class="w">    </span><span class="c1">/// &lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ValidProperties</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Option 1&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                                                            </span><span class="s">&quot;Option 2&quot;</span><span class="w"> </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">ToString</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$&quot;My Binding: {Property}&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="na">[PluginName(&quot;My Binding&quot;)]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyBinding</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IBinding</span><span class="p">,</span><span class="w"> </span><span class="n">IValidateBinding</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[Property(&quot;Property&quot;)]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Property</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="w"> </span><span class="n">Press</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// do something depending on &lt;see cref=&quot;Property&quot;/&gt;</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="w"> </span><span class="n">Release</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// do something depending on &lt;see cref=&quot;Property&quot;/&gt;</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
+<span class="w">    </span><span class="c1">/// A list of valid keys for this category</span>
+<span class="w">    </span><span class="c1">/// &lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">ValidProperties</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Option 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Option 2&quot;</span><span class="w"> </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">ToString</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$&quot;My Binding: {Property}&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></div>
+<p>Bindings from plugins can only get selected by the user from the Advanced Binding Editor. <br />
+Any options in the <code class="docutils literal notranslate"><span class="pre">ValidProperties</span></code> / <code class="docutils literal notranslate"><span class="pre">ValidKeys</span></code> array will be displayed in the UI as a dropdown list of ‘My Binding’.</p>
+<img alt="Bindings dropdown" class="align-center" src="../../_images/bindings-dropdown.png" />
+<br>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In 0.6.x, You are able to declare additional properties, that will be displayed in the advanced binding editor.</p>
+</div>
+<img alt="Extra Properties in the advanced binding editor" class="align-center" src="../../_images/advanced-binding-editor-extra-properties.png" />
+<br>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>You can find the 0.6.x sample code <a class="external reference" href="https://github.com/Mrcubix/OpenTabletDriver-Plugin-Doc/blob/master/samples/0.6.x/Samples.Binding/MyBinding.cs">here</a>.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>You can find the 0.5.x sample code <a class="external reference" href="https://github.com/Mrcubix/OpenTabletDriver-Plugin-Doc/blob/master/samples/0.5.x/Samples.Binding/MyBinding.cs">here</a>.</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../output_mode/" class="btn btn-neutral float-left" title="Output Modes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../tools/" class="btn btn-neutral float-right" title="Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Gess1t (Mrcubix).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

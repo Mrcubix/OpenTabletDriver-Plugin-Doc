@@ -1,0 +1,65 @@
+/* ---------------------------- Highight ---------------------------- */
+
+:root {
+    --monospace-font-family: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace ;
+}
+
+.rst-content div[class^=highlight] pre
+{
+    font-family: var(--monospace-font-family);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ---------------------------- Side bar ---------------------------- */
+
+figure.align-center {
+    margin-bottom: 24px!important;
+}
+
+/* Makes the sidebar element more spaced out */
+.wy-menu-vertical li.toctree-l1 > a,
+.wy-menu-vertical li.toctree-l1.current > a {
+    border: none;
+    padding: 0.4em 1.9em;
+}
+
+/* The default width seemed slightly too small */
+.wy-nav-content {
+    max-width: 900px;
+}
+
+/* I hate absolute layouts */
+.wy-side-nav-search.fixed {
+    position: fixed;
+}
+
+@media only screen and (min-width: 769px) {
+    /* Center the content */
+    .wy-body-for-nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .wy-nav-side {
+        left: inherit;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    /* Make sure no gap are created when the sidebar is shown */
+    .wy-nav-side.shift {
+        width: 350px;
+        left: 0;
+    }
+
+    .wy-nav-content-wrap.shift {
+        position: inherit;
+        min-width: inherit;
+        left: 350px;
+        top: 0;
+        height: inherit;
+        overflow: inherit;
+    }
+}

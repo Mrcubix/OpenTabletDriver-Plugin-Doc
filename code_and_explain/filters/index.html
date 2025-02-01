@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filters &mdash; OpenTabletDriver Plugin Documentation 0.5.3.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/override.css?v=ce37a600" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bfc6ee90" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=8f057e8d"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/tabs.js?v=3030b3cb"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Interpolators" href="../interpolators/" />
+    <link rel="prev" title="Github Submodule" href="../../getting_started/submodule/" />
+    <!-- Discord Embed -->
+    <meta property="og:title" content="OpenTabletDriver Plugin Documentation">
+    <meta property="og:description" content="A documentation on how to make your own plugin for OpenTabletDriver.">
+    <!-- How to play -->
+    <meta property="og:image" content="">
+    <meta property="theme-color" content="#82B2EA">
+    <!-- twitter -->
+    <meta name="twitter:site" content="OpenTabletDriver Plugin Documentation">
+    <meta name="twitter:title" content="Touch User Gestures Documentation">
+    <meta name="twitter:description" content="A documentation on how to make your own plugin for OpenTabletDriver.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="">
+    <meta name="theme-color" content="#82B2EA">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../" class="icon icon-home">
+            OpenTabletDriver Plugin Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/introduction/">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/plugin_types/">Plugin types &amp; features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/plugin_types/#filters">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/plugin_types/#interpolators">Interpolators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/plugin_types/#output-modes">Output Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/plugin_types/#bindings">Bindings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/plugin_types/#tools">Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/pipeline/">Pipeline</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/nuget/">Nuget Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/submodule/">Github Submodule</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code &amp; Explanation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interpolators/">Interpolators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output_mode/">Output Modes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../output_mode/#absolute-output-mode">Absolute Output Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../output_mode/#relative-output-mode">Relative Output Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../bindings/">Bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dependencies/">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications  (0.6.x Only)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Debugging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../debugging/vscode/">Debugging with VSCode</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quirks &amp; Issues</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../issues/introduction/">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../issues/log_spam/">Log spam (0.6.x Only)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../issues/plugin_memory_leak/">Plugin Memory Leak (Fixed in 0.6.5.1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../issues/plugin_race_conditions/">Plugin Race Conditions (0.6.x Only)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../issues/settings_wipe/">Settings Wipe (0.6.x Only)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">OpenTabletDriver Plugin Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Filters</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/Mrcubix/OpenTabletDriver-Plugin-Doc/blob/master/code_and_explain/filters.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="filters">
+<h1>Filters<a class="headerlink" href="#filters" title="Link to this heading"></a></h1>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">0.6.4.0</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">0.5.3.3</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="na">[PluginName(&quot;My Name&quot;)]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyFilter</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPositionedPipelineElement</span><span class="o">&lt;</span><span class="n">IDeviceReport</span><span class="o">&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">PipelinePosition</span><span class="w"> </span><span class="n">Position</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">PipelinePosition</span><span class="p">.</span><span class="n">PreTransform</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">IDeviceReport</span><span class="o">&gt;?</span><span class="w"> </span><span class="n">Emit</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Any reports, including positionals, are received here</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Consume</span><span class="p">(</span><span class="n">IDeviceReport</span><span class="w"> </span><span class="n">report</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// report are emitted to other elements in the pipeline</span>
+<span class="w">        </span><span class="n">Emit</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">report</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="na">[PluginName(&quot;My Name&quot;)]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyFilter</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IFilter</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">FilterStage</span><span class="w"> </span><span class="n">FilterStage</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">FilterStage</span><span class="p">.</span><span class="n">PreTranspose</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Position is received here</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Vector2</span><span class="w"> </span><span class="nf">Filter</span><span class="p">(</span><span class="n">Vector2</span><span class="w"> </span><span class="k">value</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">value</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></div>
+<p>In 0.6.x, You are able to alter positionnal reports via the <code class="docutils literal notranslate"><span class="pre">Consume()</span></code> method, which is called on every report. <br />
+You can also choose to not emit a positionnal report to prevent it from going further in the pipeline.</p>
+<p>In 0.5.x, you are able to alter positionnal reports via the <code class="docutils literal notranslate"><span class="pre">Filter</span></code> method, which is called on every report. <br />
+You may discard the report by returning <code class="docutils literal notranslate"><span class="pre">Vector2.Zero</span></code> or less if the user has <code class="docutils literal notranslate"><span class="pre">Ignore</span> <span class="pre">output</span> <span class="pre">outside</span> <span class="pre">area</span></code> is enabled.</p>
+<p>Filters can choose to be called at two different stages of the pipeline by changing the value of <code class="docutils literal notranslate"><span class="pre">Position</span></code>. <br />
+The possible values are :</p>
+<ul class="simple">
+<li><p>Before the transformation: <code class="docutils literal notranslate"><span class="pre">PipelinePosition.PreTransform</span></code> (0.6.x) / <code class="docutils literal notranslate"><span class="pre">FilterStage.PreTranspose</span></code> (0.5.x),</p></li>
+<li><p>After the transformation: <code class="docutils literal notranslate"><span class="pre">PipelinePosition.PostTransform</span></code> (0.6.x) / <code class="docutils literal notranslate"><span class="pre">FilterStage.PostTranspose</span></code> (0.5.x)</p></li>
+</ul>
+<p>(before or after the transformation from tablet to screen coordinates).</p>
+<div class="danger admonition">
+<p class="admonition-title">Do not block non-handled input types (0.6.x Only)</p>
+<p>Plugins such as Filters should emit non-handled report types in <code class="docutils literal notranslate"><span class="pre">Consume()</span></code>.<br />
+Failing in doing so may result in those reports being discarded.<br />
+(Preventing Bindings set by the user from being invoked &amp; other plugins from working properly)</p>
+</div>
+<p>You can make your filter configurable by the user by adding properties to your class.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="na">[Property(&quot;Numerical Input Box Property&quot;),</span>
+<span class="na"> Unit(&quot;Some Unit Here&quot;),</span>
+<span class="na"> DefaultPropertyValue(727),</span>
+<span class="na"> ToolTip(&quot;Filter template:\n\n&quot; +</span>
+<span class="na">         &quot;A property that appear as an input box.\n\n&quot; +</span>
+<span class="na">         &quot;Has a numerical value.&quot;)]</span>
+<span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ExampleNumericalProperty</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="na">[Property(&quot;String Type Input Box Property&quot;),</span>
+<span class="na"> DefaultPropertyValue(&quot;727&quot;),</span>
+<span class="na"> ToolTip(&quot;Filter template:\n\n&quot; +</span>
+<span class="na">         &quot;A property that appear as an input box.\n\n&quot; +</span>
+<span class="na">         &quot;Has a string value.&quot;)]</span>
+<span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ExampleStringProperty</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="na">[BooleanProperty(&quot;Boolean Property&quot;, &quot;&quot;),</span>
+<span class="na"> DefaultPropertyValue(true),</span>
+<span class="na"> ToolTip(&quot;Area Randomizer:\n\n&quot; +</span>
+<span class="na">         &quot;A property that appear as a check box.\n\n&quot; +</span>
+<span class="na">         &quot;Has a Boolean value&quot;)]</span>
+<span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">ExampleBooleanProperty</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1">// 0.6.x Only</span>
+<span class="na">[Property(&quot;Validated Property&quot;),</span>
+<span class="na"> DefaultPropertyValue(&quot;Two&quot;),</span>
+<span class="na"> PropertyValidated(nameof(SomeChoice))]</span>
+<span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">SomeValidatedProperty</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">SomeChoice</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;One&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Two&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Three&quot;</span><span class="w"> </span><span class="p">};</span>
+</pre></div>
+</div>
+<img alt="Plugin Properties" class="align-center" src="../../_images/plugin-properties.png" />
+<br>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Enumerable used for a <code class="docutils literal notranslate"><span class="pre">PropertyValidated</span></code> must be a static field.</p>
+</div>
+<br>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>You can find the 0.6.x sample code <a class="external reference" href="https://github.com/Mrcubix/OpenTabletDriver-Plugin-Doc/blob/master/samples/0.6.x/Samples.Filter/MyFilter.cs">here</a>.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>You can find the 0.5.x sample code <a class="external reference" href="https://github.com/Mrcubix/OpenTabletDriver-Plugin-Doc/blob/master/samples/0.5.x/Samples.Filter/MyFilter.cs">here</a>.</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../getting_started/submodule/" class="btn btn-neutral float-left" title="Github Submodule" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../interpolators/" class="btn btn-neutral float-right" title="Interpolators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Gess1t (Mrcubix).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
