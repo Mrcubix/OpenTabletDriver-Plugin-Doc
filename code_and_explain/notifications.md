@@ -1,3 +1,4 @@
+(notifications)=
 # Notifications  (0.6.x Only)
 
 Plugins can send toast notifications to the user.

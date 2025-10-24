@@ -4,6 +4,10 @@ Your plugin may depend on objects, such as a reference to a tablet using the plu
 
 ::::{tabs}
 :::{tab} 0.6.4.0
+```{admonition} About the order of Dependency Resolution
+:class: note
+All dependencies will be fed shortly after instanciation, except for Tabletreference which will be fed last.
+```
 ```csharp
 [TabletReference]
 public TabletReference? _tablet { get; set; }

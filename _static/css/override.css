@@ -34,6 +34,11 @@ figure.align-center {
     position: fixed;
 }
 
+nav.wy-nav-side
+{
+    padding-bottom: 0;
+}
+
 @media only screen and (min-width: 769px) {
     /* Center the content */
     .wy-body-for-nav {

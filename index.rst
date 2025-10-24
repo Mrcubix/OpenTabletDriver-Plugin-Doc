@@ -26,6 +26,8 @@ Welcome to OpenTabletDriver Plugin Documentation's documentation!
    code_and_explain/bindings
    code_and_explain/tools
    code_and_explain/dependencies
+   code_and_explain/output_mode_access
+   code_and_explain/logging
    code_and_explain/notifications
 
 .. toctree::
