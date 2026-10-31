@@ -42,6 +42,7 @@ public class MyInterp : AsyncPositionedPipelineElement<IDeviceReport>
     }
 }
 ```
+The `UpdateState` in called on a set `Frequency`, while `ConsumeState` is called every time a report is received.
 :::
 :::{tab} 0.5.3.3
 ```csharp
@@ -66,10 +67,10 @@ public class MyInterp : Interpolator
     }
 }
 ```
-:::
-::::
 
 The `UpdateState` in called on every tablet reports, while `Interpolate` is called at the frequency defined by the user, represented by the `Frequency` property.
+:::
+::::
 
 ```{admonition} Confusing changes were made in 0.6.x
 :class: warning

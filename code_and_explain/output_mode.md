@@ -84,8 +84,8 @@ The cursor is only moved if the result of the transformation is of an expected t
 and it is not outside the defined area while `Ignore input outside area` is enabled.
 
 ```{note}
-In 0.5.x, The `Transpose()` present in the base class returns the transformed position, \
-while in 0.6.x, the `Transform()` returns the same report, with its position modified.
+In 0.6.x, the `Transform()` returns the same report, with its position modified, \
+while in 0.5.x, The `Transpose()` present in the base class returns the transformed position.
 ```
 
 See [AbsoluteOutputMode on Github](https://github.com/OpenTabletDriver/OpenTabletDriver/blob/v0.6.4.0/OpenTabletDriver.Plugin/Output/AbsoluteOutputMode.cs)
